@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../css/Login.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="icon" href="../img/logo1.png" type="image/icon type">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../js/bootstrap.js"></script>
+</head>
+
+<body>
+    <section>
+        <div class="img-bg">
+            <img src="../img/bg.jpg" alt="Hình Ảnh Minh Họa">
+        </div>
+        <div class="noi-dung">
+            <div class="form">
+                <h2>Login Page</h2>
+                <form id="loginForm" action="">
+                    <div class="input-form">
+                        <span>Username or Email address</span>
+                        <input type="text" id="username" name="username">
+                    </div>
+                    <div class="input-form">
+                        <span>Password</span>
+                        <input type="password" id="password" name="password">
+                    </div>
+                    <div class="nho-dang-nhap">
+                        <label><input type="checkbox" name="remember">Remember Account</label>
+                    </div>
+                    <button type="submit" class="submit rounded-button">Submit</button>
+                    <div class="input-form">
+                        <p>You Don't Have Any Account? <a href="register.html">Register</a></p>
+                    </div>
+                </form>
+                <h3>Login With Social Network</h3>
+                <ul class="icon-dang-nhap">
+                    <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="https://accounts.google.com/InteractiveLogin/identifier?elo=1&ifkv=Af_xneEcQSW4C9ylJ7IvKMnLbqz7_Iy1Zn5vn-mEVJ9PfT_op-Lof0c7826DSNKnmu7Id6QfLfUb0A&flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script>
+        function redirectToSuccessPage() {
+            // Thực hiện điều hướng đến đường link sau khi submit thành công
+            window.location.href = "../html/index.html";
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            // Lấy tham chiếu đến form
+            var loginForm = document.getElementById("loginForm");
+
+            // Thêm sự kiện lắng nghe khi form được submit
+            loginForm.addEventListener("submit", function (event) {
+                // Ngăn chặn hành vi mặc định của form (không gửi request)
+                event.preventDefault();
+
+                // Lấy giá trị nhập vào trong input tên đăng nhập
+                var username = document.getElementById("username").value;
+
+                // Lấy giá trị nhập vào trong input mật khẩu
+                var password = document.getElementById("password").value;
+
+                // Kiểm tra độ dài tên đăng nhập (phải từ 6 ký tự trở lên)
+                if (username.length < 6) {
+                    alert("Tên đăng nhập phải có ít nhất 6 ký tự.");
+                    return; // Dừng xử lý và không gửi form
+                }
+
+                // Kiểm tra xem tên đăng nhập có chứa ký tự "@gmail.com"
+                if (!username.includes("@gmail.com")) {
+                    alert("Tên đăng nhập phải chứa ký tự '@gmail.com'.");
+                    return; // Dừng xử lý và không gửi form
+                }
+
+                // Kiểm tra xem mật khẩu có chứa ít nhất một ký tự (bao gồm cả số)
+                if (password.length === 0 || !password.match(/[a-zA-Z0-9]/)) {
+                    alert("Mật khẩu phải chứa ít nhất một ký tự.");
+                    return; // Dừng xử lý và không gửi form
+                }
+
+                // Nếu không có lỗi, tiếp tục gửi form
+                loginForm.submit();
+                // Thực hiện điều hướng đến trang thành công
+                redirectToSuccessPage();
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Page</title>
+    <link rel="stylesheet" href="../css/Login.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="icon" href="../Resources/Img/logo2.png" type="image/icon type">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/bootstrap.js"></script>
+</head>
+
+<body>
+    <section>
+        <div class="img-bg">
+            <img src="../img/bg.jpg" alt="Hình Ảnh Minh Họa">
+        </div>
+        <div class="noi-dung">
+            <div class="form">
+                <h2>Register</h2>
+                <form id="registerForm" action="">
+                    <div class="input-form">
+                        <span>UseName or Email Address</span>
+                        <input type="text" id="username" name="">
+                    </div>
+                    <div class="input-form">
+                        <span>Password</span>
+                        <input type="password" id="password" name="">
+                    </div>
+                    <div class="input-form">
+                        <span>Re-enter Password</span>
+                        <input type="password" id="confirmPassword" name="">
+                    </div>
+                    <div class="nho-dang-nhap">
+                        <label><input type="checkbox" name=""> Remember Account</label>
+                    </div>
+                  <a href="../html/index.html" id="Submit"> <button type="submit"  class="submit rounded-button">Submit</button></a>
+                    <div class="input-form">
+                        <p>You Have Account ? <a href="../html/Login.html">Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+      <!--   javascript    -->
+    <script>
+        function redirectToSuccessPage() {
+    // Thực hiện điều hướng đến đường link sau khi submit thành công
+    window.location.href = "../html/index.html";
+}
+        document.addEventListener("DOMContentLoaded", function () {
+            // Lấy tham chiếu đến form
+            var registerForm = document.getElementById("registerForm");
+
+            // Thêm sự kiện lắng nghe khi form được submit
+            registerForm.addEventListener("submit", function (event) {
+                // Ngăn chặn hành vi mặc định của form (không gửi request)
+                event.preventDefault();
+
+                // Lấy giá trị nhập vào trong input tên đăng nhập
+                var username = document.getElementById("username").value;
+
+                // Lấy giá trị nhập vào trong input mật khẩu
+                var password = document.getElementById("password").value;
+
+                // Lấy giá trị nhập vào trong input lặp lại mật khẩu
+                var confirmPassword = document.getElementById("confirmPassword").value;
+
+                // Kiểm tra độ dài tên đăng nhập (phải từ 6 ký tự trở lên)
+                if (username.length < 6) {
+                    alert("Tên đăng nhập phải có ít nhất 6 ký tự.");
+                    return; // Dừng xử lý và không gửi form
+                }
+
+                // Kiểm tra xem tên đăng nhập có chứa ký tự "@gmail.com"
+                if (!username.includes("@gmail.com")) {
+                    alert("Tên đăng nhập phải chứa ký tự '@gmail.com'.");
+                    return; // Dừng xử lý và không gửi form
+                }
+
+                // Kiểm tra xem mật khẩu có chứa ít nhất một ký tự (bao gồm cả số)
+                if (password.length === 0 || !password.match(/[a-zA-Z0-9]/)) {
+                    alert("Mật khẩu phải chứa ít nhất một ký tự.");
+                    return; // Dừng xử lý và không gửi form
+                }
+
+                // Kiểm tra xem mật khẩu nhập lại có giống mật khẩu không
+                if (password !== confirmPassword) {
+                    alert("Mật khẩu nhập lại không khớp.");
+                    return; // Dừng xử lý và không gửi form
+                }
+
+                // Nếu không có lỗi, tiếp tục gửi form
+                registerForm.submit();
+                // Thực hiện điều hướng đến trang thành công
+                redirectToSuccessPage();
+            });
+        });
+    </script>
+</body>
+
+</html>

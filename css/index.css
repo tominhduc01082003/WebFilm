@@ -1,0 +1,258 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Times New Roman", Times, serif;
+    background-image: url('../img/background.jpg');
+}
+.nav-link a{
+    font-size: 100px;
+}
+
+.navbar-expand-lg {
+    padding: 100px;
+    color: #aeafb3;
+}
+
+.navbar-brand img {
+    max-width: 100px;
+    border-radius: 20px;
+}
+
+body{
+    background: #BD9E9E;
+    background-image: url('../img/bg.jpg');
+}
+
+.carousel-item:hover{
+    cursor: url('../img/pointer.png') 8 8, auto;
+}
+.carousel-inner  img{
+    width: 800px;
+    height: 700px;
+}
+/* Css for event click */
+.carousel-item.active {
+    animation: blink-animation 3s infinite;
+  }
+  
+  @keyframes blink-animation {
+    0%, 100% {
+       opacity: 1; /*độ mờ đục */
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+/*  <----->  */
+div.row{
+    padding-top: 30px;
+}
+
+.new-arrivals-heading {
+    padding: 5px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    color: white;
+    font-size: 70px;
+    background-color: #282D3C;
+    border-radius: 30px;
+}
+
+.card {
+    background-image: url("../Trailer/Img/bg.jpg");
+    background-size: cover;
+}
+.card.a{
+    cursor: url('../img/pointer.png') 8 8, auto;
+}
+.card-title a{
+    color: white;
+    text-decoration: none;
+    
+}
+
+.card-text a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.card-title{
+    font-size: 25px;
+    font-family: sans-serif;
+}
+
+div.card-body h5{
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+div.card-body p{
+    color: white;
+    border: 1px solid white;
+    text-align: center;
+    font-size: 20px;
+}
+section{
+    background-image: url('../img/background.jpg');
+    /* background: black; */
+}
+#undecon{
+    background-color: #282D3C;
+}
+.container{
+    background-image: url('../img/background.jpg');
+    overflow: hidden;
+}
+.divider {
+    background: black;
+    border-top: 1px solid #000000;
+    margin: 2px 0;
+}
+
+
+.movie1, .movie2, .movie3, .movie4, .movie5, .movie6 , .movie7, .movie8, .movie9{
+    max-width: 500px;
+    max-height: 600px;
+    margin-bottom: 50px;
+    border-radius: 5%;
+    display: block;
+    transition: transform .75s;
+}
+.movie7, .movie8, .movie9{
+    max-width: 500px;
+    max-height: 600px;
+    margin-bottom: 50px;
+    border-radius: 5%;
+    display: block;
+    transition: transform .75s;
+}
+.movie1:hover, .movie2:hover, .movie3:hover, .movie4:hover, .movie5:hover, .movie6:hover  , .movie7:hover, .movie8:hover, .movie9:hover{
+    transform: scale(1.15);
+    cursor: url('../img/pointer.png') 8 8, auto;
+}
+  
+.card-no-border {
+    border: none;
+    background-color: transparent;
+}
+/*  footer  */
+footer {
+    background-color: #363945;
+    padding: 20px 0;
+}
+
+footer h3 {
+    color: #c7c7c7;
+    font-size: 18px;
+}
+
+footer p {
+    color: #a1a1a1;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 5px;
+}
+
+footer ul li a {
+    color: #b4b2b2;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: #333;
+}
+
+/* Responsive */
+
+/* CSS cho màn hình máy tính */
+@media only screen and (min-width: 992px) {
+    section {
+      padding: 5%;
+    }
+  
+    .carousel-item img {
+      height: 30vh;
+      width: 15vw;
+    }
+  
+    .card img {
+      width: 95%;
+    }
+  }
+  
+  /* CSS cho màn hình điện thoại */
+  @media only screen and (max-width: 600px) {
+    section {
+      padding: 2%;
+    }
+  
+    .carousel-item {
+      height: 150px;
+    }
+  
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .card {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+    }
+  
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .card-text {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  
+  /* CSS cho màn hình iPad */
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    section {
+      padding: 3%;
+    }
+  
+    .carousel-item {
+      height: 300px;
+    }
+  
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .card {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+    }
+  
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .card-text {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+/* ---- */
